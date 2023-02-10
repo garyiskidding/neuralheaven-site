@@ -31,6 +31,31 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <script>
+    function submitForm(){
+      var email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+      if(!email_regex.test($('#exampleEmail').val()))
+      {
+        alert("Invalid Email");
+        return;
+      }
+
+      if($('#exampleFirstName').val().length === 0){
+        alert("Please Enter the First Name");
+        return;
+      }
+
+      if($('#exampleLastName').val().length === 0){
+        alert("Please Enter the Last Name");
+        return;
+      }
+
+      $('#exampleFirstName').prop('disabled', true);
+      $('#exampleLastName').prop('disabled', true);
+      $('#exampleEmail').prop('disabled', true);
+      $('#thankYouDiv').addClass('d-block');
+    }
+  </script>
 </head>
 
 <body>
@@ -131,6 +156,49 @@
             <br><br>
             Given the reputational risks of non-compliance with legislation and the substantial fines they can issue, ensuring that your data privacy processes are led by individuals with the right skills and experience should be a priority. Relying on MagicPass™ for data privacy consultancy presents a high-value alternative that provides tailored data privacy support from a trusted cyber security partner.  
           </h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <hr style="height:1px;border-width:0;color:gray;background-color:gray">
+          <img src="assets/img/contact.jpg" class="img-fluid" alt="About MagicPass™">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col justify-content-center">
+          <h1 class="m-3" style="text-align: center;">Contact Us</h1>
+          <h2 style="font-size: medium;">
+            Data breaches and cyber attacks are on the rise, and it's more important than ever to secure your valuable information. That's where we come in. Our team of expert data security consultants has years of experience in the field, and we know exactly what it takes to keep your data safe. We use the latest encryption software and threat-detection techniques to ensure that your data is protected 24/7.<br><br>Don't wait until it's too late - secure your data now with our comprehensive consultancy services. Contact us today to schedule a consultation and see how we can help you safeguard your valuable information with MagicPass™.
+          </h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <form>
+            <div class="form-row">
+              <div class="col m-2">
+                <label for="exampleFirstName">First Name</label>
+                <input type="text" class="form-control" id="exampleFirstName" placeholder="Enter First Name">
+              </div>
+              <div class="col m-2">
+                <label for="exampleLastName">Last Name</label>
+                <input type="text" class="form-control" id="exampleLastName" placeholder="Enter Last Name">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col m-2">
+                <label for="exampleEmail">Email Address</label>
+                <input type="email" class="form-control" id="exampleEmail" aria-describedby="emailHelp" placeholder="Email">
+                <small id="emailHelp" class="form-text text-muted">Your Personal Data is Safe with Us.</small>
+              </div>
+            </div>
+            <a onclick="submitForm();" style="background: #aa42f5;  border: 0;  padding: 10px 24px;  color: #fff;  transition: 0.4s;  border-radius: 4px;" type="submit" class="btn btn-primary">Submit</a>
+            <div class="form-row">
+              <div id="thankYouDiv" class="col mt-3 d-none" >
+                <h3 style="color: #aa42f5;">Thank You. You should hear from us shortly.</h3>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
       <br>
